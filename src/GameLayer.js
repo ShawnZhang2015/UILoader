@@ -3,10 +3,9 @@ GameLayer = cc.Layer.extend({
 	
 	ctor: function() {
 		this._super();
-
-		sz.uiloader.widgetFromJsonFile(this, "res/DemoLogin.ExportJson");
-		cc.assert(this._loginButton.getName() === "_loginButton");
-		cc.assert(this._closeButton.getName() === "_closeButton");
+		sz.uiloader.widgetFromJsonFile(this, "res/DemoLogin.ExportJson", {eventPerfix:"_on", memberPrefix:"_"} );
+		//cc.assert(this._loginButton.getName() === "_loginButton");
+		//cc.assert(this._closeButton.getName() === "_closeButton");
 	},
 
 	_onLoginButtonEvent: function(sender, type) {
@@ -40,11 +39,15 @@ GameLayer = cc.Layer.extend({
 	},
 
 	_onAgreeCheckBoxSelected: function(sender) {
-		cc.log("_onAgreeCheckBoxSelected:");
+		cc.log("_onAgreeCheckBoxSelected");
 	},
 
 	_onAgreeCheckBoxUnselected: function(sender) {
-		cc.log("_onAgreeCheckBoxUnselected:");
+		cc.log("_onAgreeCheckBoxUnselected");
+	},
+
+	_onNameLabelTouchBegan: function() {
+		cc.log("_onNameLabelTouchBegan");
 	}
 });
 

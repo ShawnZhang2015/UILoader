@@ -1,15 +1,21 @@
 var sz = sz || {};
 
 sz.UILoader = cc.Class.extend({
-
+    _eventPrefix: null,
+    _memberPrefix: null,
     /**
      * 加载UI文件
-     * @param target
-     * @param jsonFile
+     * @param target将  jsonFile加载出的节点绑定到的目标
+     * @param jsonFile  cocostudio ui编辑器生成的json文件
      */
-    widgetFromJsonFile: function(target, jsonFile) {
+    widgetFromJsonFile: function(target, jsonFile, options) {
         cc.assert(target && jsonFile);
+        if (!options) {
+            options = {};
+        }
 
+        this._eventPrefix  =  options.eventPrefix || sz.UILoader.DEFAULT_EVENT_PREFIX;
+        this._memberPrefix = options.memberPrefix || sz.UILoader.DEFAULT_MEMBER_PREFIX;
         var rootNode = ccs.uiReader.widgetFromJsonFile(jsonFile);
         if (!rootNode) {
             cc.log("Load json file failed");
@@ -21,7 +27,7 @@ sz.UILoader = cc.Class.extend({
     },
 
     /**
-     * 递归进行成员绑定
+     * 递归对rootWidget下的子节点进行成员绑定
      * @param rootWidget
      * @param target
      * @private
@@ -35,7 +41,8 @@ sz.UILoader = cc.Class.extend({
             widgetName = widget.getName();
 
             //控件名存在，绑定到target上
-            if (widgetName && widgetName[0] === "_") {
+            var prefix = widgetName.substr(0, self._memberPrefix.length);
+            if (prefix === self._memberPrefix) {
                 target[widgetName] = widget;
                 self._registerWidgetEvent(target, widget);
             }
@@ -54,6 +61,23 @@ sz.UILoader = cc.Class.extend({
     },
 
     /**
+     * 获取控件事件
+     * @param widget
+     * @returns {*}
+     */
+    getWidgetEvent: function(widget) {
+        var bindWidgetEvent = null;
+        var events = sz.UILoader.widgetEvents;
+        for (var i = 0; i < events.length; i++) {
+            bindWidgetEvent = events[i];
+            if (widget instanceof bindWidgetEvent.widgetType) {
+                break;
+            }
+        }
+        return bindWidgetEvent;
+    },
+
+    /**
      * 注册控件事件
      * @param target
      * @param widget
@@ -62,38 +86,45 @@ sz.UILoader = cc.Class.extend({
      */
     _registerWidgetEvent: function(target, widget) {
         var name = widget.getName();
-        var newName = name[1].toUpperCase() + name.slice(2);
-        var eventName = "_on" + newName + "Event";
+
+        //截取前缀,首字母大定
+        var newName = name[this._memberPrefix.length].toUpperCase() + name.slice(this._memberPrefix.length + 1);
+        var eventName = this._eventPrefix + newName + "Event";
         var isBindEvent = false;
 
         if (target[eventName]) {
             isBindEvent = true;
         } else {
-            //生成事件函数名
-            var widgetEvent = sz.UILoader.getWidgetEvent(widget);
-            if (widgetEvent) {
-                var eventsArray = widgetEvent.events.map(function(eventName) {
-                    return "_on"+ newName + eventName;
-                });
-
-                for (var i = 0; i < eventsArray.length; i++) {
-                    eventName = eventsArray[i];
-                    if (cc.isFunction(target[eventName])) {
-                        isBindEvent = true;
-                        break;
-                    }
+            //取事控件件名
+            var widgetEvent = this.getWidgetEvent(widget);
+            if (!widgetEvent) {
+                return;
+            }
+            //检查事函数,生成事件名数组
+            var eventNameArray = [];
+            for (var i = 0; i < widgetEvent.events.length; i++) {
+                eventName = this._eventPrefix + newName + widgetEvent.events[i];
+                eventNameArray.push(eventName);
+                if (cc.isFunction(target[eventName])) {
+                    isBindEvent = true;
                 }
             }
+
         }
 
         //事件响应函数
+        var self = this;
         var eventFunc = function(sender, type) {
             var callBack;
-            if (eventsArray) {
-                var funcName = eventsArray[type];
+            if (eventNameArray) {
+                var funcName = eventNameArray[type];
                 callBack = target[funcName];
             } else {
                 callBack = target[eventName];
+            }
+
+            if (self._onWidgetEvent) {
+                self._onWidgetEvent(sender, type);
             }
 
             if (callBack) {
@@ -112,66 +143,40 @@ sz.UILoader = cc.Class.extend({
         }
     }
 
+
+    /**
+     * 控件事件捕获, 可以由子类重写此函数
+     * @param sender
+     * @param type
+     * @private
+     */
+    //_onWidgetEvent: function(sender, type) {
+    //
+    //}
+
 });
 
-/**
- * 获取控件事件
- * @param widget
- * @returns {*}
- */
-sz.UILoader.getWidgetEvent = function(widget) {
-    var bindWidgetEvent = null;
-    var events = sz.UILoader.widgetEvents;
-    for (var i = 0; i < events.length; i++) {
-        bindWidgetEvent = events[i];
-        if (widget instanceof bindWidgetEvent.widgetClass) {
-            break;
-        }
-    }
-
-    return bindWidgetEvent;
-};
+sz.UILoader.DEFAULT_EVENT_PREFIX = "_on";
+sz.UILoader.DEFAULT_MEMBER_PREFIX = "_";
 
 //触摸事件
 sz.UILoader.touchEvents = ["TouchBegan", "TouchMoved", "TouchEnded"];
 //控件事件列表
 sz.UILoader.widgetEvents = [
     //Button
-    {
-        widgetClass: ccui.Button,
-        events: sz.UILoader.touchEvents
-    },
+    {widgetType: ccui.Button, events: sz.UILoader.touchEvents},
     //ImageView
-    {
-        widgetClass: ccui.ImageView,
-        events: sz.UILoader.touchEvents
-    },
+    {widgetType: ccui.ImageView, events: sz.UILoader.touchEvents},
     //TextFiled
-    {
-        widgetClass: ccui.TextField,
-        events: ["AttachWithIME", "DetachWithIME", "InsertText", "DeleteBackward"]
-    },
+    {widgetType: ccui.TextField, events: ["AttachWithIME", "DetachWithIME", "InsertText", "DeleteBackward"]},
     //CheckBox
-    {
-        widgetClass: ccui.CheckBox,
-        events: ["Selected", "Unselected"]
-    },
+    {widgetType: ccui.CheckBox, events: ["Selected", "Unselected"]},
     //ListView
-    {
-        widgetClass: ccui.ListView,
-        events:["SelectedItem"]
-    },
+    {widgetType: ccui.ListView, events:["SelectedItem"]},
     //Panel
-    {
-        widgetClass: ccui.Layout,
-        events: sz.UILoader.touchEvents
-    },
+    {widgetType: ccui.Layout, events: sz.UILoader.touchEvents},
     //BMFont
-    {
-        widgetClass: ccui.TextBMFont,
-        events: sz.UILoader.touchEvents
-    },
-
+    {widgetType: ccui.TextBMFont, events: sz.UILoader.touchEvents},
     null
 ];
 
