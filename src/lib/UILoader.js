@@ -1,73 +1,66 @@
- UILoader = {};
-(function() {
+var sz = sz || {};
 
-    var widgetEvent = {
-        widgetClass: ccui.Widget,
-        events:["TouchBegan", "TouchMoved", "TouchEnded"]
-    };
+sz.UILoader = cc.Class.extend({
 
-    var widgetEvents = [
-        //Button
-        {
-            widgetClass: ccui.Button,
-            events: widgetEvent.events,
-        },
+    /**
+     * 加载UI文件
+     * @param target
+     * @param jsonFile
+     */
+    widgetFromJsonFile: function(target, jsonFile) {
+        cc.assert(target && jsonFile);
 
-        //ImageView
-        {
-            widgetClass: ccui.ImageView,
-            events: widgetEvent.events
-        },
-
-        //TextFiled
-        {
-            widgetClass: ccui.TextField,
-            events: ["AttachWithIME", "DetachWithIME", "InsertText", "DeleteBackward"],
-        },
-
-        //CheckBox
-        {
-            widgetClass: ccui.CheckBox,
-            events: ["Selected", "Unselected"]
-        },
-
-        //ListView
-        {
-            widgetClass: ccui.ListView,
-            events:["SelectedItem"]
-        },
-
-        //Panel
-        {
-            widgetClass: ccui.Layout,
-            events: widgetEvent.events,
-        },
-
-        //BMFont
-        {
-            widgetClass: ccui.TextBMFont,
-            events: widgetEvent.events,
+        var rootNode = ccs.uiReader.widgetFromJsonFile(jsonFile);
+        if (!rootNode) {
+            cc.log("Load json file failed");
         }
-    ];
 
-    var bindWidget = function(widget, target) {
-        //找到事件
-        var bindWidgetEvent = null;
-        for (var i = 0; i < widgetEvents.length; i++) {
-            bindWidgetEvent = widgetEvents[i];
-            if (widget instanceof bindWidgetEvent.widgetClass) {
-                break;
+        target.rootNode = rootNode;
+        target.addChild(rootNode);
+        this._bindMenbers(rootNode, target);
+    },
+
+    /**
+     * 递归进行成员绑定
+     * @param rootWidget
+     * @param target
+     * @private
+     */
+    _bindMenbers: function(rootWidget, target) {
+        var widgetName,
+            children = rootWidget.getChildren();
+
+        var self = this;
+        children.forEach(function(widget) {
+            widgetName = widget.getName();
+
+            //控件名存在，绑定到target上
+            if (widgetName && widgetName[0] === "_") {
+                target[widgetName] = widget;
+                self._registerWidgetEvent(target, widget);
             }
-        }
 
-        //绑定事件
-        if (bindWidgetEvent) {
-            registerWidgetEvent(target, widget, bindWidgetEvent);
-        }
-    };
+            //绑定子控件,可以实现: a._b._c._d 访问子控件
+            if (!rootWidget[widgetName]) {
+                rootWidget[widgetName] = widget;
+            }
 
-    //注册控件事件函数
-    var registerWidgetEvent = function(target, widget, widgetEvent) {
+            //如果还有子节点，递归进去
+            if (widget.getChildrenCount()) {
+                self._bindMenbers(widget, target);
+            }
+
+        });
+    },
+
+    /**
+     * 注册控件事件
+     * @param target
+     * @param widget
+     * @param widgetEvent
+     * @private
+     */
+    _registerWidgetEvent: function(target, widget) {
         var name = widget.getName();
         var newName = name[1].toUpperCase() + name.slice(2);
         var eventName = "_on" + newName + "Event";
@@ -77,21 +70,24 @@
             isBindEvent = true;
         } else {
             //生成事件函数名
-            var eventsArray = widgetEvent.events.map(function(eventName) {
-                return "_on"+ newName + eventName;
-            });
-            for (var i = 0; i < eventsArray.length; i++) {
-                eventName = eventsArray[i];
-                if (cc.isFunction(target[eventName])) {
-                    isBindEvent = true;
-                    break;
+            var widgetEvent = sz.UILoader.getWidgetEvent(widget);
+            if (widgetEvent) {
+                var eventsArray = widgetEvent.events.map(function(eventName) {
+                    return "_on"+ newName + eventName;
+                });
+
+                for (var i = 0; i < eventsArray.length; i++) {
+                    eventName = eventsArray[i];
+                    if (cc.isFunction(target[eventName])) {
+                        isBindEvent = true;
+                        break;
+                    }
                 }
             }
         }
 
-        //事件函数
+        //事件响应函数
         var eventFunc = function(sender, type) {
-
             var callBack;
             if (eventsArray) {
                 var funcName = eventsArray[type];
@@ -105,6 +101,7 @@
             }
         };
 
+        //注册事件监听
         if (isBindEvent) {
             widget.setTouchEnabled(true);
             if (widget.addEventListener) {
@@ -113,57 +110,69 @@
                 widget.addTouchEventListener(eventFunc, target);
             }
         }
-    };
+    }
 
-    //bind成员变量
-    var bindMembers = function(rootWidget, target) {
-        var widgetName,
-            children = rootWidget.getChildren();
+});
 
-        children.forEach(function(widget) {
-            widgetName = widget.getName();
-
-            //控件名存在，绑定到target上
-            if (widgetName && widgetName[0] === "_") {
-                target[widgetName] = widget;
-                bindWidget(widget, target);
-            }
-
-            //绑定子控件
-            if (!rootWidget[widgetName]) {
-                rootWidget[widgetName] = widget;
-            }
-
-            //如果还有子节点，递归进去
-            if (widget.getChildrenCount()) {
-                bindMembers(widget, target);
-            }
-        });
-    };
-
-    var widgetFromJsonFile = function(target, jsonFile) {
-        if (!jsonFile || !target) {
-            cc.log("error: jsonfile or target is null");
-            return;
+/**
+ * 获取控件事件
+ * @param widget
+ * @returns {*}
+ */
+sz.UILoader.getWidgetEvent = function(widget) {
+    var bindWidgetEvent = null;
+    var events = sz.UILoader.widgetEvents;
+    for (var i = 0; i < events.length; i++) {
+        bindWidgetEvent = events[i];
+        if (widget instanceof bindWidgetEvent.widgetClass) {
+            break;
         }
+    }
 
-        var root = ccs.uiReader.widgetFromJsonFile(jsonFile);
+    return bindWidgetEvent;
+};
 
-        if (!root) {
-            cc.log(jsonFile + " create error");
-            return;
-        }
+//触摸事件
+sz.UILoader.touchEvents = ["TouchBegan", "TouchMoved", "TouchEnded"];
+//控件事件列表
+sz.UILoader.widgetEvents = [
+    //Button
+    {
+        widgetClass: ccui.Button,
+        events: sz.UILoader.touchEvents
+    },
+    //ImageView
+    {
+        widgetClass: ccui.ImageView,
+        events: sz.UILoader.touchEvents
+    },
+    //TextFiled
+    {
+        widgetClass: ccui.TextField,
+        events: ["AttachWithIME", "DetachWithIME", "InsertText", "DeleteBackward"]
+    },
+    //CheckBox
+    {
+        widgetClass: ccui.CheckBox,
+        events: ["Selected", "Unselected"]
+    },
+    //ListView
+    {
+        widgetClass: ccui.ListView,
+        events:["SelectedItem"]
+    },
+    //Panel
+    {
+        widgetClass: ccui.Layout,
+        events: sz.UILoader.touchEvents
+    },
+    //BMFont
+    {
+        widgetClass: ccui.TextBMFont,
+        events: sz.UILoader.touchEvents
+    },
 
-        if (target.addChild) {
-            target.addChild(root);
-        }
+    null
+];
 
-        if (!target.rootNode) {
-            target.rootNode = root;
-        }
-
-        bindMembers(root, target);
-    };
-
-    UILoader.widgetFromJsonFile = widgetFromJsonFile;
-})();
+sz.uiloader = new sz.UILoader();

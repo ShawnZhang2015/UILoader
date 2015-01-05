@@ -3,7 +3,8 @@ GameLayer = cc.Layer.extend({
 	
 	ctor: function() {
 		this._super();
-		UILoader.widgetFromJsonFile(this, "res/DemoLogin.ExportJson");
+
+		sz.uiloader.widgetFromJsonFile(this, "res/DemoLogin.ExportJson");
 		cc.assert(this._loginButton.getName() === "_loginButton");
 		cc.assert(this._closeButton.getName() === "_closeButton");
 	},
@@ -22,8 +23,12 @@ GameLayer = cc.Layer.extend({
 		}
 	},
 
-	_onCloseButtonTouchBegan: function() {
-		cc.log("onCloseButtonTouchBegan");
+	_onCloseButtonTouchBegan: function(sender) {
+		cc.log("_onCloseButtonTouchBegan");
+	},
+
+	_onCloseButtonTouchEnded: function(sender) {
+		cc.log("_onCloseButtonTouchEnded");
 	},
 
 	_onLoginButtonTouchEnded: function(sender) {
@@ -34,8 +39,12 @@ GameLayer = cc.Layer.extend({
 		cc.log(sender.string);
 	},
 
-	_onAgreeCheckBoxSelected: function(sender, type) {
-		cc.log("_onAgreeCheckBoxEvent:" + type);
+	_onAgreeCheckBoxSelected: function(sender) {
+		cc.log("_onAgreeCheckBoxSelected:");
+	},
+
+	_onAgreeCheckBoxUnselected: function(sender) {
+		cc.log("_onAgreeCheckBoxUnselected:");
 	}
 });
 
