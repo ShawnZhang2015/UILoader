@@ -1,0 +1,11 @@
+{
+    "debugMode"     : 1,
+    "frameRate"     : 60,
+    "id"            : "gameCanvas",
+    "renderMode"    : 1,
+    "jsList"        : [
+    	"src/resources.js",
+        "src/lib/UILoader.js",
+    	"src/GameLayer.js"
+    ]
+}
