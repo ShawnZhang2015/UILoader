@@ -6,7 +6,7 @@ sz.UILoader = cc.Class.extend({
     /**
      * 加载UI文件
      * @param target将  jsonFile加载出的节点绑定到的目标
-     * @param jsonFile  cocostudio ui编辑器生成的json文件
+     * @param jsonFile  cocostudio UI编辑器生成的json文件
      */
     widgetFromJsonFile: function(target, jsonFile, options) {
         cc.assert(target && jsonFile);
@@ -65,7 +65,7 @@ sz.UILoader = cc.Class.extend({
      * @param widget
      * @returns {*}
      */
-    getWidgetEvent: function(widget) {
+    _getWidgetEvent: function(widget) {
         var bindWidgetEvent = null;
         var events = sz.UILoader.widgetEvents;
         for (var i = 0; i < events.length; i++) {
@@ -81,7 +81,6 @@ sz.UILoader = cc.Class.extend({
      * 注册控件事件
      * @param target
      * @param widget
-     * @param widgetEvent
      * @private
      */
     _registerWidgetEvent: function(target, widget) {
@@ -96,7 +95,7 @@ sz.UILoader = cc.Class.extend({
             isBindEvent = true;
         } else {
             //取事控件件名
-            var widgetEvent = this.getWidgetEvent(widget);
+            var widgetEvent = this._getWidgetEvent(widget);
             if (!widgetEvent) {
                 return;
             }
@@ -177,6 +176,7 @@ sz.UILoader.widgetEvents = [
     {widgetType: ccui.Layout, events: sz.UILoader.touchEvents},
     //BMFont
     {widgetType: ccui.TextBMFont, events: sz.UILoader.touchEvents},
+    //last must null
     null
 ];
 

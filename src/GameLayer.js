@@ -50,4 +50,3 @@ GameLayer = cc.Layer.extend({
 		cc.log("_onNameLabelTouchBegan");
 	}
 });
-
