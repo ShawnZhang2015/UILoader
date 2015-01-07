@@ -108,7 +108,6 @@ sz.UILoader = cc.Class.extend({
                     isBindEvent = true;
                 }
             }
-
         }
 
         //事件响应函数
@@ -155,9 +154,10 @@ sz.UILoader = cc.Class.extend({
 
 });
 
+//事件前缀
 sz.UILoader.DEFAULT_EVENT_PREFIX = "_on";
+//成员前缀
 sz.UILoader.DEFAULT_MEMBER_PREFIX = "_";
-
 //触摸事件
 sz.UILoader.touchEvents = ["TouchBegan", "TouchMoved", "TouchEnded"];
 //控件事件列表
