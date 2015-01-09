@@ -104,7 +104,7 @@ sz.UILoader = cc.Class.extend({
             for (var i = 0; i < widgetEvent.events.length; i++) {
                 eventName = this._eventPrefix + newName + widgetEvent.events[i];
                 eventNameArray.push(eventName);
-                if (cc.isFunction(target[eventName])) {
+                if (typeof target[eventName] === "function") {
                     isBindEvent = true;
                 }
             }
