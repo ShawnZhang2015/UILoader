@@ -70,7 +70,7 @@ sz.UILoader = cc.Class.extend({
         var events = sz.UILoader.widgetEvents;
         for (var i = 0; i < events.length; i++) {
             bindWidgetEvent = events[i];
-            if (widget instanceof bindWidgetEvent.widgetType) {
+            if (bindWidgetEvent && widget instanceof bindWidgetEvent.widgetType) {
                 break;
             }
         }
