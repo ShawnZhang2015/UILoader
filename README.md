@@ -64,3 +64,11 @@ _onLoginButtonEvent: function(sender, type) {
 ```
 
 注意如你还定义有**前缀 + 控件名 + 事件名** 格式的函数如**_loginButtonTouchBegan** 它们将不会被执行。
+
+##rootNode
+使用UILoader成功加载UI文件后，默认会将由jsonFile创建出来的Widget对象保存到**target.rootNode**变量上，使你可以方便对其操作比如：
+```javascript
+this.rootNode.setVisible(false);
+this.rootNode.setPosition(this.widget * 0.5, this.height * 0.5);
+```
+注意：uiloader默认会将rootNode设置到target的中心位置显示，但不会修改rootNode的锚点。
