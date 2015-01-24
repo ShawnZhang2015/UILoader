@@ -1,8 +1,8 @@
 
-GameLayer = cc.Layer.extend({
+GameLayer = cc.LayerColor.extend({
 	
 	ctor: function() {
-		this._super();
+		this._super(cc.color.GREEN);
 		sz.uiloader.widgetFromJsonFile(this, "res/DemoLogin.ExportJson", {eventPerfix:"_on", memberPrefix:"_"} );
 		//cc.assert(this._loginButton.getName() === "_loginButton");
 		//cc.assert(this._closeButton.getName() === "_closeButton");

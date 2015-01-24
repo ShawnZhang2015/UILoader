@@ -21,6 +21,11 @@ sz.UILoader = cc.Class.extend({
             cc.log("Load json file failed");
         }
 
+        //默认设置rootNode到屏幕中心位置
+        var width = rootNode.width * (rootNode.anchorX - 0.5);
+        var height = rootNode.height * (rootNode.anchorY - 0.5);
+        rootNode.setPosition(cc.p(target.width * 0.5 + width, target.height * 0.5 + height));
+
         target.rootNode = rootNode;
         target.addChild(rootNode);
         this._bindMenbers(rootNode, target);
