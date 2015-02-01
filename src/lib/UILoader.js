@@ -22,10 +22,11 @@ sz.UILoader = cc.Class.extend({
         }
 
         //默认设置rootNode到屏幕中心位置
-        var x = rootNode.width * (rootNode.anchorX - 0.5);
-        var y = rootNode.height * (rootNode.anchorY - 0.5);
-        rootNode.setPosition(cc.p(target.width * 0.5 + x, target.height * 0.5 + y));
-
+        if (target.width > 0 && target.height > 0) {
+            var x = rootNode.width * (rootNode.anchorX - 0.5);
+            var y = rootNode.height * (rootNode.anchorY - 0.5);
+            rootNode.setPosition(cc.p(target.width * 0.5 + x, target.height * 0.5 + y));
+        }
         target.rootNode = rootNode;
         target.addChild(rootNode);
         this._bindMenbers(rootNode, target);
