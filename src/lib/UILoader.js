@@ -16,17 +16,19 @@ sz.UILoader = cc.Class.extend({
 
         this._eventPrefix  =  options.eventPrefix || sz.UILoader.DEFAULT_EVENT_PREFIX;
         this._memberPrefix = options.memberPrefix || sz.UILoader.DEFAULT_MEMBER_PREFIX;
+        //绑定自身
+        this._bindMenbers(target, target);
+
+        //绑定jsonFile
+        if (!jsonFile) {
+            return;
+        }
+
         var rootNode = ccs.uiReader.widgetFromJsonFile(jsonFile);
         if (!rootNode) {
             cc.log("Load json file failed");
         }
-
-        //默认设置rootNode到屏幕中心位置
-        if (target.width > 0 && target.height > 0) {
-            var x = rootNode.width * (rootNode.anchorX - 0.5);
-            var y = rootNode.height * (rootNode.anchorY - 0.5);
-            rootNode.setPosition(cc.p(target.width * 0.5 + x, target.height * 0.5 + y));
-        }
+        rootNode.setTouchEnabled(false);
         target.rootNode = rootNode;
         target.addChild(rootNode);
         this._bindMenbers(rootNode, target);
@@ -93,10 +95,8 @@ sz.UILoader = cc.Class.extend({
         var name = widget.getName();
 
         //截取前缀,首字母大定
-        var newName = name[this._memberPrefix.length].toUpperCase() + name.slice(this._memberPrefix.length + 1);
-        var eventName = this._eventPrefix + newName + "Event";
+        var eventName = this.getWidgetEventName(widget, "Event");
         var isBindEvent = false;
-
         if (target[eventName]) {
             isBindEvent = true;
         } else {
@@ -105,10 +105,10 @@ sz.UILoader = cc.Class.extend({
             if (!widgetEvent) {
                 return;
             }
-            //检查事函数,生成事件名数组
+            //检查事件函数,生成事件名数组
             var eventNameArray = [];
             for (var i = 0; i < widgetEvent.events.length; i++) {
-                eventName = this._eventPrefix + newName + widgetEvent.events[i];
+                eventName = this.getWidgetEventName(widget, widgetEvent.events[i]);//newName + widgetEvent.events[i];
                 eventNameArray.push(eventName);
                 if (typeof target[eventName] === "function") {
                     isBindEvent = true;
@@ -120,19 +120,51 @@ sz.UILoader = cc.Class.extend({
         var self = this;
         var eventFunc = function(sender, type) {
             var callBack;
+            var funcName;
             if (eventNameArray) {
-                var funcName = eventNameArray[type];
+                funcName = eventNameArray[type];
                 callBack = target[funcName];
             } else {
                 callBack = target[eventName];
             }
 
-            if (self._onWidgetEvent) {
+            //事件勾子函数
+            if (callBack && self._onWidgetEvent) {
                 self._onWidgetEvent(sender, type);
             }
 
+            //开始
+            if (type === ccui.Widget.TOUCH_BEGAN) {
+                var time = sz.UILoader.DEFAULT_TOUCH_LONG_TIME;
+                if (callBack) {
+                    time = callBack.call(target, sender, type);
+                }
+
+                //检测长按事件
+                funcName = sz.uiloader.getWidgetEventName(sender, sz.UILoader.TOUCH_LONG_EVENT);
+                var touchLong = target[funcName];
+
+                if (touchLong) {
+                    time = time || sz.UILoader.DEFAULT_TOUCH_LONG_TIME;
+                    if (time > 0 && time < 5) {
+                        target.scheduleOnce(touchLong, time);
+                    }
+                }
+                return;
+            }
+
+            //长按解除
+            if (type === ccui.Widget.TOUCH_ENDED) {
+                funcName = sz.uiloader.getWidgetEventName(sender, sz.UILoader.TOUCH_LONG_EVENT);
+                var scheduleFunc = target[funcName];
+                if (scheduleFunc) {
+                    target.unschedule(scheduleFunc);
+                }
+            }
+
+            //事件回调
             if (callBack) {
-                return callBack.call(target, sender, type);
+                callBack.call(target, sender, type);
             }
         };
 
@@ -145,7 +177,7 @@ sz.UILoader = cc.Class.extend({
                 widget.addTouchEventListener(eventFunc, target);
             }
         }
-    }
+    },
 
 
     /**
@@ -158,14 +190,34 @@ sz.UILoader = cc.Class.extend({
     //
     //}
 
+    /**
+     * @param widget
+     * @param event
+     * @returns {string}
+     */
+    getWidgetEventName: function(widget, event) {
+        cc.assert(widget);
+        var name = widget.name;
+        var newName = name[this._memberPrefix.length].toUpperCase() + name.slice(this._memberPrefix.length + 1);
+        if (event) {
+            return this._eventPrefix + newName + event;
+        } else {
+            return this._eventPrefix + newName;
+        }
+    }
+
 });
 
 //事件前缀
 sz.UILoader.DEFAULT_EVENT_PREFIX = "_on";
 //成员前缀
 sz.UILoader.DEFAULT_MEMBER_PREFIX = "_";
+//默认长按触发时间
+sz.UILoader.DEFAULT_TOUCH_LONG_TIME = 1;
+//长按事件名
+sz.UILoader.TOUCH_LONG_EVENT = "TouchLong";
 //触摸事件
-sz.UILoader.touchEvents = ["TouchBegan", "TouchMoved", "TouchEnded"];
+sz.UILoader.touchEvents = ["TouchBegan", "TouchMoved", "TouchEnded", sz.UILoader.TOUCH_LONG_EVENT];
 //控件事件列表
 sz.UILoader.widgetEvents = [
     //Button
