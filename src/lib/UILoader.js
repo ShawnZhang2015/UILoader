@@ -197,7 +197,7 @@ sz.UILoader = cc.Class.extend({
      */
     getWidgetEventName: function(widget, event) {
         cc.assert(widget);
-        var name = widget.name;
+        var name = widget.getName();
         var newName = name[this._memberPrefix.length].toUpperCase() + name.slice(this._memberPrefix.length + 1);
         if (event) {
             return this._eventPrefix + newName + event;
