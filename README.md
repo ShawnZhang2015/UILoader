@@ -93,7 +93,7 @@ ctor: function () {
 }
 ```
 
-##注册cc.Node类型事件函数
+##为cc.Node类型节点注册触摸事件
 
 >使用sz.uiloader.registerTouchEvent函数为cc.Node类型的节点注册触摸事件。
 
