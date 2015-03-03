@@ -239,3 +239,53 @@ sz.UILoader.widgetEvents = [
 ];
 
 sz.uiloader = new sz.UILoader();
+
+/**
+ * cc.node触摸事件注册函数
+ * @param node
+ * @param touchEvent
+ * @param swallowTouches
+ * @returns cc.EventListener
+ */
+sz.uiloader.registerTouchEvent = function(node, touchEvent, swallowTouches) {
+    if (!node instanceof cc.Node ) {
+        cc.log('param "node" is not cc.Node type');
+        return null;
+    }
+
+    if (node instanceof ccui.Widget) {
+        cc.log('param "node" Can not be ccui.Widget type');
+        return null;
+    }
+
+
+    var touchListener = cc.EventListener.create({
+        event: touchEvent || cc.EventListener.TOUCH_ONE_BY_ONE,
+        swallowTouches: swallowTouches || true
+    });
+
+
+    touchListener.onTouchBegan = function() {
+        if (!node.onTouchBegan) {
+            return false;
+        }
+
+        var ret = node.onTouchBegan.apply(node,arguments);
+        return ret ? true : false;
+    };
+
+    touchListener.onTouchMoved = function() {
+        if (node.onTouchMoved) {
+            node.onTouchMoved.apply(node,arguments);
+        }
+    };
+
+    touchListener.onTouchEnded = function() {
+        if (node.onTouchEnded) {
+            node.onTouchEnded.apply(node,arguments);
+        }
+    };
+
+    cc.eventManager.addListener(touchListener, node);
+    return touchListener;
+};

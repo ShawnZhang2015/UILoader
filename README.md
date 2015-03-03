@@ -92,3 +92,59 @@ ctor: function () {
     ...
 }
 ```
+
+##注册cc.Node类型事件函数
+
+>使用sz.uiloader.registerTouchEvent函数为cc.Node类型的节点注册触摸事件。
+
+```javascript
+testRegisterTouchEvent: function() {
+        //为当前layer注册触摸
+        sz.uiloader.registerTouchEvent(this);
+
+        //创建一个sprite
+        var spriteButton = new cc.Sprite("#button.png");
+        spriteButton.setName("spriteButton");
+        spriteButton.x = this.width - spriteButton.width * 0.5;
+        spriteButton.y = spriteButton.height * 0.5;
+        this.addChild(spriteButton);
+        //设置触摸事件函数
+        spriteButton.onTouchBegan = function(touch) {
+            if (cc.rectContainsPoint(this.getBoundingBox(), touch.getLocation())) {
+                cc.log("spriteButton onTouchBegan: " + this.getName());
+                return true;
+            }
+        };
+
+        spriteButton.onTouchMoved = function(touch) {
+            cc.log("spriteButton onTouchMoved: " + this.getName());
+        };
+
+        spriteButton.onTouchEnded = function(touch) {
+            cc.log("spriteButton onTouchEnded: " + this.getName());
+        };
+        //为spriteButton注册触摸事件
+        sz.uiloader.registerTouchEvent(spriteButton);
+
+    },
+
+    //当前Layer上的触摸事件
+    onTouchBegan: function(touch) {
+        cc.log("GameLayer onTouchBegan" + JSON.stringify(touch.getLocation()));
+        return true;
+    },
+
+    onTouchMoved: function(touch) {
+        cc.log("GameLayer onTouchMoved" + JSON.stringify(touch.getLocation()));
+        return true;
+    },
+
+    onTouchEnded: function(touch) {
+        cc.log("GameLayer onTouchEnded" + JSON.stringify(touch.getLocation()));
+        return true;
+    }
+```
+>sz.uiloader.registerTouchEvent函数只是简单封装引擎API，转换事件响应函数的this变量为当前节点对象。
+>注意：
+>   1. 你可以运行代码会发现上面代码中spriteButton的事件处理函数中的打印的this.getName()返回为spriteButton的名字。
+>   2. sz.uiloader.registerTouchEvent主要还是用在对当前Layer对象上（this）, 目前暂时还不支持touchLong事件。
