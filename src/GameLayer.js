@@ -20,47 +20,33 @@ GameLayer = cc.LayerColor.extend({
 
     testRegisterTouchEvent: function() {
         //为当前layer注册触摸
-        sz.uiloader.registerTouchEvent(this);
+        sz.uiloader.registerTouchEvent(this, this);
 
         //创建一个sprite
         var spriteButton = new cc.Sprite("#button.png");
-        spriteButton.setName("spriteButton");
+        spriteButton.setName("_spriteButton");
         spriteButton.x = this.width - spriteButton.width * 0.5;
         spriteButton.y = spriteButton.height * 0.5;
         this.addChild(spriteButton);
-        //设置触摸事件函数
-        spriteButton.onTouchBegan = function(touch) {
-            if (cc.rectContainsPoint(this.getBoundingBox(), touch.getLocation())) {
-                cc.log("spriteButton onTouchBegan: " + this.getName());
-                return true;
-            }
-        };
-
-        spriteButton.onTouchMoved = function(touch) {
-            cc.log("spriteButton onTouchMoved: " + this.getName());
-        };
-
-        spriteButton.onTouchEnded = function(touch) {
-            cc.log("spriteButton onTouchEnded: " + this.getName());
-        };
-        //为spriteButton注册触摸事件
-        sz.uiloader.registerTouchEvent(spriteButton);
-
+        sz.uiloader.registerTouchEvent(spriteButton, this);
     },
 
-    onTouchBegan: function(touch) {
+    _onSpriteButtonTouchBegan: function() {
+        cc.log('_onSpriteButtonTouchBegan');
+    },
+
+
+    _onTouchBegan: function(sender, touch) {
         cc.log("GameLayer onTouchBegan" + JSON.stringify(touch.getLocation()));
         return true;
     },
 
-    onTouchMoved: function(touch) {
+    _onTouchMoved: function(sender, touch) {
         cc.log("GameLayer onTouchMoved" + JSON.stringify(touch.getLocation()));
-        return true;
     },
 
-    onTouchEnded: function(touch) {
+    _onTouchEnded: function(sender, touch) {
         cc.log("GameLayer onTouchEnded" + JSON.stringify(touch.getLocation()));
-        return true;
     },
 
     _onButtonTouchBegan: function() {
@@ -79,8 +65,13 @@ GameLayer = cc.LayerColor.extend({
 			case 1:
 				cc.log("_onLoginButtonEvent: move");
 				break;
-			case 2:
+            case 2:
 				cc.log("_onLoginButtonEvent: end");
+                //加载cocostudio2.1编辑器生成的UI
+                cc.loader.load(g_cocos, function() {
+                    var scene = InventoryLayer.scene();
+                    cc.director.runScene(scene);
+                });
 				break;
 		}
 	},

@@ -1,0 +1,2137 @@
+{
+  "ID": "3e99ab2e-8f1d-48b0-a27a-9ec4bc4529c7",
+  "Version": "2.1.2.0",
+  "Name": "Inventory",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "PrePosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "PreSize": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn04.png"
+            },
+            "Tag": 51,
+            "PrePosition": {
+              "X": 0.5071,
+              "Y": 0.1877
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408099,
+            "Position": {
+              "X": 324.5255,
+              "Y": 180.2272
+            },
+            "Scale": {
+              "ScaleX": 2.9637,
+              "ScaleY": 0.9188
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 190.0,
+              "Y": 86.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_wood_Copy",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn04.png"
+            },
+            "Tag": 25,
+            "PrePosition": {
+              "X": 0.5007,
+              "Y": 0.749
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 900001496,
+            "Position": {
+              "X": 320.4432,
+              "Y": 719.0815
+            },
+            "Scale": {
+              "ScaleX": 2.9637,
+              "ScaleY": 0.9188
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 190.0,
+              "Y": 86.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_wood",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn04.png"
+            },
+            "Tag": 4,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.6667
+            },
+            "PreSize": {
+              "X": 0.0958,
+              "Y": 0.1437
+            },
+            "ActionTag": 143601795,
+            "Position": {
+              "X": 319.9985,
+              "Y": 640.0754
+            },
+            "Scale": {
+              "ScaleX": 2.9637,
+              "ScaleY": 0.9188
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 190.0,
+              "Y": 86.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_wood",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn04.png"
+            },
+            "Tag": 5,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5854
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 162517942,
+            "Position": {
+              "X": 319.9999,
+              "Y": 561.9768
+            },
+            "Scale": {
+              "ScaleX": 2.9637,
+              "ScaleY": 0.9188
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 190.0,
+              "Y": 86.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_wood",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn04.png"
+            },
+            "Tag": 6,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5031
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 355644284,
+            "Position": {
+              "X": 319.9985,
+              "Y": 482.9587
+            },
+            "Scale": {
+              "ScaleX": 2.9637,
+              "ScaleY": 0.9188
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 190.0,
+              "Y": 86.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_wood",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn04.png"
+            },
+            "Tag": 146,
+            "PrePosition": {
+              "X": 0.5032,
+              "Y": 0.2677
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408056,
+            "Position": {
+              "X": 322.0255,
+              "Y": 256.9765
+            },
+            "Scale": {
+              "ScaleX": 2.9637,
+              "ScaleY": 0.9188
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 190.0,
+              "Y": 86.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_wood",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn04.png"
+            },
+            "Tag": 7,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.4236
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 707150579,
+            "Position": {
+              "X": 319.9999,
+              "Y": 406.6945
+            },
+            "Scale": {
+              "ScaleX": 2.9637,
+              "ScaleY": 0.9188
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 190.0,
+              "Y": 86.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_wood",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn04.png"
+            },
+            "Tag": 28,
+            "PrePosition": {
+              "X": 0.5094,
+              "Y": 0.3416
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1007625043,
+            "Position": {
+              "X": 326.0255,
+              "Y": 327.9763
+            },
+            "Scale": {
+              "ScaleX": 2.9637,
+              "ScaleY": 0.9188
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 190.0,
+              "Y": 86.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_wood",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn06.png"
+            },
+            "Tag": 23,
+            "PrePosition": {
+              "X": 0.0711,
+              "Y": 0.7934
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 141812274,
+            "Position": {
+              "X": 45.4997,
+              "Y": 761.6951
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 27.4916
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.4279,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "Size": {
+              "X": 35.0,
+              "Y": 20.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Frame",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FlipX": true,
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn06.png"
+            },
+            "Tag": 24,
+            "PrePosition": {
+              "X": 0.9309,
+              "Y": 0.7953
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 685188145,
+            "Position": {
+              "X": 595.7893,
+              "Y": 763.4487
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 27.6381
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "Size": {
+              "X": 35.0,
+              "Y": 20.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Frame",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn07.png"
+            },
+            "Tag": 26,
+            "PrePosition": {
+              "X": 0.4882,
+              "Y": 0.7799
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 894571902,
+            "Position": {
+              "X": 312.4662,
+              "Y": 748.7275
+            },
+            "Scale": {
+              "ScaleX": 27.3684,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 20.0,
+              "Y": 35.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Frame_w",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn05.png"
+            },
+            "Tag": 29,
+            "PrePosition": {
+              "X": 0.4922,
+              "Y": 0.1672
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 615400144,
+            "Position": {
+              "X": 315.0009,
+              "Y": 160.5424
+            },
+            "Scale": {
+              "ScaleX": 27.3214,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 20.0,
+              "Y": 35.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Frame_Red",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn02.png"
+            },
+            "Tag": 30,
+            "PrePosition": {
+              "X": 0.1063,
+              "Y": 0.1905
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 611476395,
+            "Position": {
+              "X": 68.0145,
+              "Y": 182.8443
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 94.0,
+              "Y": 100.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Metal_Red",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FlipX": true,
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn02.png"
+            },
+            "Tag": 31,
+            "PrePosition": {
+              "X": 0.8984,
+              "Y": 0.1905
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 124133139,
+            "Position": {
+              "X": 574.9857,
+              "Y": 182.8447
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 94.0,
+              "Y": 100.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Metal_Red",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn03.png"
+            },
+            "Tag": 32,
+            "PrePosition": {
+              "X": 0.108,
+              "Y": 0.7524
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1010318394,
+            "Position": {
+              "X": 69.1287,
+              "Y": 722.2931
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 94.0,
+              "Y": 100.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Metal",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FlipX": true,
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn03.png"
+            },
+            "Tag": 33,
+            "PrePosition": {
+              "X": 0.9001,
+              "Y": 0.7534
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 563959279,
+            "Position": {
+              "X": 576.0825,
+              "Y": 723.2952
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 94.0,
+              "Y": 100.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Metal",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn09.png"
+            },
+            "Tag": 34,
+            "PrePosition": {
+              "X": 0.2617,
+              "Y": 0.157
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 917786191,
+            "Position": {
+              "X": 167.4899,
+              "Y": 150.7055
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 20.0,
+              "Y": 15.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Scratch_Red",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn09.png"
+            },
+            "Tag": 35,
+            "PrePosition": {
+              "X": 0.8103,
+              "Y": 0.1565
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 790179372,
+            "Position": {
+              "X": 518.6014,
+              "Y": 150.2062
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 20.0,
+              "Y": 15.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Scratch_Red",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn11.png"
+            },
+            "Tag": 37,
+            "PrePosition": {
+              "X": 0.0587,
+              "Y": 0.6483
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 10258634,
+            "Position": {
+              "X": 37.5998,
+              "Y": 622.3788
+            },
+            "Scale": {
+              "ScaleX": 0.9444,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 15.0,
+              "Y": 20.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Scratch",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn11.png"
+            },
+            "Tag": 38,
+            "PrePosition": {
+              "X": 0.0595,
+              "Y": 0.5013
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 900380844,
+            "Position": {
+              "X": 38.0883,
+              "Y": 481.2679
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 15.0,
+              "Y": 20.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Scratch",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn12.png"
+            },
+            "Tag": 39,
+            "PrePosition": {
+              "X": 0.0595,
+              "Y": 0.5453
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 25922285,
+            "Position": {
+              "X": 38.1021,
+              "Y": 523.4922
+            },
+            "Scale": {
+              "ScaleX": 0.9444,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 15.0,
+              "Y": 20.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Scratch_Double",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn10.png"
+            },
+            "Tag": 40,
+            "PrePosition": {
+              "X": 0.0594,
+              "Y": 0.612
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 464915514,
+            "Position": {
+              "X": 38.0175,
+              "Y": 587.492
+            },
+            "Scale": {
+              "ScaleX": 0.9444,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 15.0,
+              "Y": 20.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Scratch_B",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn08.png"
+            },
+            "Tag": 46,
+            "PrePosition": {
+              "X": 0.2634,
+              "Y": 0.7905
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 621314646,
+            "Position": {
+              "X": 168.6008,
+              "Y": 758.8837
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 0.8632
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 20.0,
+              "Y": 15.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Scratch",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn08.png"
+            },
+            "Tag": 47,
+            "PrePosition": {
+              "X": 0.8059,
+              "Y": 0.7905
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 100051320,
+            "Position": {
+              "X": 515.7452,
+              "Y": 758.88
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 0.8632
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 20.0,
+              "Y": 15.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Scratch",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "DifficultySelection/DS16.png"
+            },
+            "Tag": 57,
+            "PrePosition": {
+              "X": 0.5064,
+              "Y": 0.7941
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 710883006,
+            "Position": {
+              "X": 324.0669,
+              "Y": 762.3644
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 270.0,
+              "Y": 94.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Tittle",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png"
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn15.png"
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn14.png"
+            },
+            "Scale9Width": 82,
+            "Scale9Height": 82,
+            "TouchEnable": true,
+            "Tag": 86,
+            "PrePosition": {
+              "X": 0.9329,
+              "Y": 0.769
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1010864333,
+            "Position": {
+              "X": 597.0811,
+              "Y": 738.2234
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 82.0,
+              "Y": 82.0
+            },
+            "FrameEvent": "",
+            "Name": "Button_Close",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FlipX": true,
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn11.png"
+            },
+            "Tag": 72,
+            "PrePosition": {
+              "X": 0.9463,
+              "Y": 0.6371
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 218895352,
+            "Position": {
+              "X": 605.6014,
+              "Y": 611.6518
+            },
+            "Scale": {
+              "ScaleX": 0.9444,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 15.0,
+              "Y": 20.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Scratch",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FlipX": true,
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn11.png"
+            },
+            "Tag": 73,
+            "PrePosition": {
+              "X": 0.9466,
+              "Y": 0.4891
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 323508890,
+            "Position": {
+              "X": 605.8379,
+              "Y": 469.5398
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 15.0,
+              "Y": 20.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Scratch",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FlipX": true,
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn12.png"
+            },
+            "Tag": 74,
+            "PrePosition": {
+              "X": 0.9463,
+              "Y": 0.5331
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 22599002,
+            "Position": {
+              "X": 605.6031,
+              "Y": 511.7638
+            },
+            "Scale": {
+              "ScaleX": 0.9444,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 15.0,
+              "Y": 20.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Scratch_Double",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FlipX": true,
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn10.png"
+            },
+            "Tag": 75,
+            "PrePosition": {
+              "X": 0.9466,
+              "Y": 0.5956
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 110155196,
+            "Position": {
+              "X": 605.829,
+              "Y": 571.7642
+            },
+            "Scale": {
+              "ScaleX": 0.9444,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 15.0,
+              "Y": 20.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_Scratch_B",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn01.png"
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 40,
+            "Scale9OriginY": 40,
+            "Scale9Width": 193,
+            "Scale9Height": 20,
+            "Tag": 147,
+            "PrePosition": {
+              "X": 0.311718583,
+              "Y": 0.467708737
+            },
+            "PreSize": {
+              "X": 0.5688,
+              "Y": 1.125
+            },
+            "LeftMargin": 62.9998932,
+            "RightMargin": 304.000122,
+            "TopMargin": 330.999634,
+            "BottomMargin": 269.0004,
+            "ActionTag": 1045408057,
+            "Position": {
+              "X": 199.4999,
+              "Y": 449.0004
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.2667
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 273.0,
+              "Y": 360.0
+            },
+            "FrameEvent": "",
+            "Name": "Image_15",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FlipX": true,
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Common/Cn01.png"
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 40,
+            "Scale9OriginY": 40,
+            "Scale9Width": 193,
+            "Scale9Height": 20,
+            "Tag": 148,
+            "PrePosition": {
+              "X": 0.7148,
+              "Y": 0.7039
+            },
+            "PreSize": {
+              "X": 0.525,
+              "Y": 1.4125
+            },
+            "ActionTag": 1045408058,
+            "Position": {
+              "X": 457.4993,
+              "Y": 675.7141
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "Size": {
+              "X": 252.0,
+              "Y": 452.0
+            },
+            "FrameEvent": "",
+            "Name": "Image_15_Copy",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/BaB77.png"
+            },
+            "Tag": 149,
+            "PrePosition": {
+              "X": 0.5023,
+              "Y": 0.799
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408059,
+            "Position": {
+              "X": 321.5,
+              "Y": 767.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 106.0,
+              "Y": 55.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_105",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/BaB161.png"
+            },
+            "Tag": 54,
+            "PrePosition": {
+              "X": 0.3883,
+              "Y": 0.7333
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408148,
+            "Position": {
+              "X": 248.5,
+              "Y": 704.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 20.0,
+              "Y": 61.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_127",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/BaB161.png"
+            },
+            "Tag": 55,
+            "PrePosition": {
+              "X": 0.6195,
+              "Y": 0.7333
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408149,
+            "Position": {
+              "X": 396.5,
+              "Y": 704.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 20.0,
+              "Y": 61.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_127_Copy",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/BaB151.png"
+            },
+            "Tag": 52,
+            "PrePosition": {
+              "X": 0.4422,
+              "Y": 0.7328
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408146,
+            "Position": {
+              "X": 283.0,
+              "Y": 703.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 83.0,
+              "Y": 46.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_125",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/BaB159.png"
+            },
+            "Tag": 53,
+            "PrePosition": {
+              "X": 0.5719,
+              "Y": 0.7328
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408147,
+            "Position": {
+              "X": 366.0,
+              "Y": 703.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 83.0,
+              "Y": 46.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_125_Copy",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/charalockedbg.png"
+            },
+            "Tag": 56,
+            "PrePosition": {
+              "X": 0.2154,
+              "Y": 0.3299
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408166,
+            "Position": {
+              "X": 137.8331,
+              "Y": 316.6665
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 91.0,
+              "Y": 116.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_136",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/charalockedbg.png"
+            },
+            "Tag": 57,
+            "PrePosition": {
+              "X": 0.3612,
+              "Y": 0.3299
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408167,
+            "Position": {
+              "X": 231.1665,
+              "Y": 316.6665
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 91.0,
+              "Y": 116.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_136_Copy",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/charalockedbg.png"
+            },
+            "Tag": 58,
+            "PrePosition": {
+              "X": 0.507,
+              "Y": 0.3299
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408168,
+            "Position": {
+              "X": 324.5,
+              "Y": 316.6665
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 91.0,
+              "Y": 116.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_136_Copy_Copy",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/charalockedbg.png"
+            },
+            "Tag": 59,
+            "PrePosition": {
+              "X": 0.7987,
+              "Y": 0.3299
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408169,
+            "Position": {
+              "X": 511.1669,
+              "Y": 316.6665
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 91.0,
+              "Y": 116.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_136_Copy_Copy_Copy",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/charalockedbg.png"
+            },
+            "Tag": 60,
+            "PrePosition": {
+              "X": 0.2154,
+              "Y": 0.476
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408170,
+            "Position": {
+              "X": 137.8331,
+              "Y": 456.9985
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 91.0,
+              "Y": 116.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_136_Copy_0",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/charalockedbg.png"
+            },
+            "Tag": 61,
+            "PrePosition": {
+              "X": 0.3612,
+              "Y": 0.476
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408171,
+            "Position": {
+              "X": 231.1665,
+              "Y": 456.9985
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 91.0,
+              "Y": 116.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_136_Copy_Copy_0",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/charalockedbg.png"
+            },
+            "Tag": 62,
+            "PrePosition": {
+              "X": 0.507,
+              "Y": 0.476
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408172,
+            "Position": {
+              "X": 324.5,
+              "Y": 456.9985
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 91.0,
+              "Y": 116.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_136_Copy_Copy_Copy_0",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/charalockedbg.png"
+            },
+            "Tag": 63,
+            "PrePosition": {
+              "X": 0.6529,
+              "Y": 0.476
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408173,
+            "Position": {
+              "X": 417.8334,
+              "Y": 456.9985
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 91.0,
+              "Y": 116.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_136_Copy_Copy_Copy_Copy",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/charalockedbg.png"
+            },
+            "Tag": 82,
+            "PrePosition": {
+              "X": 0.507,
+              "Y": 0.6222
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408192,
+            "Position": {
+              "X": 324.5,
+              "Y": 597.3305
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 91.0,
+              "Y": 116.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_136_Copy_Copy_Copy_0_Copy",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/charalockedbg.png"
+            },
+            "Tag": 83,
+            "PrePosition": {
+              "X": 0.6529,
+              "Y": 0.6222
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408193,
+            "Position": {
+              "X": 417.8335,
+              "Y": 597.3305
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 91.0,
+              "Y": 116.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_136_Copy_Copy_Copy_Copy_Copy",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/charalockedbg.png"
+            },
+            "Tag": 84,
+            "PrePosition": {
+              "X": 0.6529,
+              "Y": 0.3299
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408194,
+            "Position": {
+              "X": 417.8335,
+              "Y": 316.6665
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 91.0,
+              "Y": 116.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_136_Copy_Copy_Copy_Copy_0",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/charalockedbg.png"
+            },
+            "Tag": 85,
+            "PrePosition": {
+              "X": 0.7987,
+              "Y": 0.476
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408195,
+            "Position": {
+              "X": 511.1669,
+              "Y": 456.9985
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 91.0,
+              "Y": 116.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_136_Copy_Copy_Copy_Copy_Copy_0",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/charalockedbg.png"
+            },
+            "Tag": 86,
+            "PrePosition": {
+              "X": 0.7987,
+              "Y": 0.6222
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408196,
+            "Position": {
+              "X": 511.1669,
+              "Y": 597.3305
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 91.0,
+              "Y": 116.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_136_Copy_Copy_Copy_Copy_Copy_Copy",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "InventoryItem.json"
+            },
+            "Tag": 67,
+            "PrePosition": {
+              "X": 0.1260788,
+              "Y": 0.5550248
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 80.69043,
+            "RightMargin": 559.3096,
+            "TopMargin": 427.1762,
+            "BottomMargin": 532.8238,
+            "ActionTag": 1045408205,
+            "Position": {
+              "X": 80.69043,
+              "Y": 532.8238
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "CColor": {},
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "FrameEvent": "",
+            "Name": "_item1",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "InventoryItem.json"
+            },
+            "Tag": 75,
+            "PrePosition": {
+              "X": 0.2835,
+              "Y": 0.5553
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408213,
+            "Position": {
+              "X": 181.4619,
+              "Y": 533.0808
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "CColor": {},
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "FrameEvent": "",
+            "Name": "_item2",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png"
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "Inventory/BaB15.png"
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "Inventory/BaB14.png"
+            },
+            "Scale9Width": 154,
+            "Scale9Height": 59,
+            "TouchEnable": true,
+            "Tag": 97,
+            "PrePosition": {
+              "X": 0.6434,
+              "Y": 0.1985
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408235,
+            "Position": {
+              "X": 411.7998,
+              "Y": 190.5146
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 154.0,
+              "Y": 59.0
+            },
+            "FrameEvent": "",
+            "Name": "_sale",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Default",
+              "Path": "Default/Button_Disable.png"
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "Inventory/BaB18.png"
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "Inventory/BaB17.png"
+            },
+            "Scale9Width": 154,
+            "Scale9Height": 59,
+            "TouchEnable": true,
+            "Tag": 98,
+            "PrePosition": {
+              "X": 0.37,
+              "Y": 0.1985
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 1045408236,
+            "Position": {
+              "X": 236.7995,
+              "Y": 190.5146
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 154.0,
+              "Y": 59.0
+            },
+            "FrameEvent": "",
+            "Name": "_update",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/BaB148.png"
+            },
+            "Tag": 1624,
+            "PrePosition": {
+              "X": 0.4508,
+              "Y": 0.7339
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 2120881468,
+            "Position": {
+              "X": 288.4997,
+              "Y": 704.4993
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 75.0,
+              "Y": 39.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_196",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "Inventory/BaB149.png"
+            },
+            "Tag": 1625,
+            "PrePosition": {
+              "X": 0.5664,
+              "Y": 0.7339
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 2120881469,
+            "Position": {
+              "X": 362.4998,
+              "Y": 704.4996
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "Size": {
+              "X": 75.0,
+              "Y": 39.0
+            },
+            "FrameEvent": "",
+            "Name": "Sprite_197",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Position": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Scale": {
+          "ScaleX": 1.0,
+          "ScaleY": 1.0
+        },
+        "AnchorPoint": {},
+        "CColor": {},
+        "Size": {
+          "X": 640.0,
+          "Y": 960.0
+        },
+        "FrameEvent": "",
+        "Name": "Node_0",
+        "ctype": "SingleNodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Node"
+}

@@ -95,56 +95,45 @@ ctor: function () {
 
 ##为cc.Node类型节点注册触摸事件
 
->使用sz.uiloader.registerTouchEvent函数为cc.Node类型的节点注册触摸事件。
-
+>使用sz.uiloader.registerTouchEvent函数为cc.Node类型的节点注册触摸事件，函数原型如下：
+                        
 ```javascript
-testRegisterTouchEvent: function() {
-        //为当前layer注册触摸
-        sz.uiloader.registerTouchEvent(this);
-
-        //创建一个sprite
-        var spriteButton = new cc.Sprite("#button.png");
-        spriteButton.setName("spriteButton");
-        spriteButton.x = this.width - spriteButton.width * 0.5;
-        spriteButton.y = spriteButton.height * 0.5;
-        this.addChild(spriteButton);
-        //设置触摸事件函数
-        spriteButton.onTouchBegan = function(touch) {
-            if (cc.rectContainsPoint(this.getBoundingBox(), touch.getLocation())) {
-                cc.log("spriteButton onTouchBegan: " + this.getName());
-                return true;
-            }
-        };
-
-        spriteButton.onTouchMoved = function(touch) {
-            cc.log("spriteButton onTouchMoved: " + this.getName());
-        };
-
-        spriteButton.onTouchEnded = function(touch) {
-            cc.log("spriteButton onTouchEnded: " + this.getName());
-        };
-        //为spriteButton注册触摸事件
-        sz.uiloader.registerTouchEvent(spriteButton);
-
-    },
-
-    //当前Layer上的触摸事件
-    onTouchBegan: function(touch) {
-        cc.log("GameLayer onTouchBegan" + JSON.stringify(touch.getLocation()));
-        return true;
-    },
-
-    onTouchMoved: function(touch) {
-        cc.log("GameLayer onTouchMoved" + JSON.stringify(touch.getLocation()));
-        return true;
-    },
-
-    onTouchEnded: function(touch) {
-        cc.log("GameLayer onTouchEnded" + JSON.stringify(touch.getLocation()));
-        return true;
-    }
+/**                                                                                 
+* cc.node触摸事件注册函数                                                                  
+* @param node                                                               
+* @param target                                                                    
+* @param touchEvent                                                                
+* @param swallowTouches                                                            
+* @returns {*}                                                                     
+*/
+sz.uiloader.registerTouchEvent = function(node, target, touchEvent, swallowTouches) {
+}
 ```
->sz.uiloader.registerTouchEvent函数只是简单封装引擎API，转换事件响应函数的this变量为当前节点对象。
->注意：
->   1. 你可以运行代码会发现上面代码中spriteButton的事件处理函数中的打印的this.getName()返回为spriteButton的名字。
->   2. sz.uiloader.registerTouchEvent主要还是用在对当前Layer对象上（this）, 目前暂时还不支持touchLong事件。
+>node为必须参数，默认事件响应对象也为node
+```javascript
+sz.uiloader.registerTouchEvent(button);
+button._onTouchBegan = function(sender, touch, event) {
+...
+}
+```
+
+>设定node触摸事件响应对象, 事件命名规则与widget类型控件相同
+```javascript
+ctor: function() {
+    ...
+    sz.uiloader.registerTouchEvent(button, this);
+    button.setName('_button');
+},
+
+_onButtonTouchBegan = function(sender, touch, event) {
+    ...
+    return true;
+}
+```
+>需要注意cc.Node类型的TouchBegan事件返回true时，才能正确响应之后的TouchMoved、TouchEnded事件。
+>cc.Node类型的长按键事件暂未实现。
+
+##支持cocostudio2.1
+>sz.UILoader可以同时支持cocostudio(1.x/2.1)导出的UI文件, 
+但在加载新版本cocostudio导出的配置文件时你需要保证使用了正确的cocos2d-js引擎版本。
+>支持cocostudio2.1嵌套UI的事件响应。需要注意的是嵌套UI节点为cc.Node类型。

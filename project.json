@@ -6,6 +6,7 @@
     "jsList"        : [
     	"src/resources.js",
         "src/lib/UILoader.js",
-    	"src/GameLayer.js"
+    	"src/GameLayer.js",
+        "src/InventoryLayer.js"
     ]
 }

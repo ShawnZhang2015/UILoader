@@ -24,14 +24,27 @@ sz.UILoader = cc.Class.extend({
             return;
         }
 
-        var rootNode = ccs.uiReader.widgetFromJsonFile(jsonFile);
+        var json = cc.loader.getRes(jsonFile);
+        var version = json.version || json.Version;
+        var rootNode;
+        if (version[0] == 1) {
+            rootNode = ccs.uiReader.widgetFromJsonFile(jsonFile);
+        } else if (version[0] == 2){
+            rootNode = ccs.csLoader.createNode(jsonFile);
+        }
+
         if (!rootNode) {
             cc.log("Load json file failed");
         }
-        rootNode.setTouchEnabled(false);
+
+        if (rootNode.setTouchEnabled) {
+            rootNode.setTouchEnabled(false);
+        }
+
         target.rootNode = rootNode;
         target.addChild(rootNode);
         this._bindMenbers(rootNode, target);
+        return rootNode;
     },
 
     /**
@@ -92,7 +105,6 @@ sz.UILoader = cc.Class.extend({
      * @private
      */
     _registerWidgetEvent: function(target, widget) {
-        var name = widget.getName();
 
         //截取前缀,首字母大定
         var eventName = this.getWidgetEventName(widget, "Event");
@@ -103,6 +115,7 @@ sz.UILoader = cc.Class.extend({
             //取事控件件名
             var widgetEvent = this._getWidgetEvent(widget);
             if (!widgetEvent) {
+                sz.uiloader.registerTouchEvent(widget, target);
                 return;
             }
             //检查事件函数,生成事件名数组
@@ -198,11 +211,13 @@ sz.UILoader = cc.Class.extend({
     getWidgetEventName: function(widget, event) {
         cc.assert(widget);
         var name = widget.getName();
-        var newName = name[this._memberPrefix.length].toUpperCase() + name.slice(this._memberPrefix.length + 1);
+        if (name) {
+            name = name[this._memberPrefix.length].toUpperCase() + name.slice(this._memberPrefix.length + 1);
+        }
         if (event) {
-            return this._eventPrefix + newName + event;
+            return this._eventPrefix + name + event;
         } else {
-            return this._eventPrefix + newName;
+            return this._eventPrefix + name;
         }
     }
 
@@ -243,11 +258,13 @@ sz.uiloader = new sz.UILoader();
 /**
  * cc.node触摸事件注册函数
  * @param node
+ * @param target
  * @param touchEvent
  * @param swallowTouches
- * @returns cc.EventListener
+ * @returns {*}
  */
-sz.uiloader.registerTouchEvent = function(node, touchEvent, swallowTouches) {
+sz.uiloader.registerTouchEvent = function(node, target, touchEvent, swallowTouches) {
+
     if (!node instanceof cc.Node ) {
         cc.log('param "node" is not cc.Node type');
         return null;
@@ -258,33 +275,28 @@ sz.uiloader.registerTouchEvent = function(node, touchEvent, swallowTouches) {
         return null;
     }
 
-
     var touchListener = cc.EventListener.create({
         event: touchEvent || cc.EventListener.TOUCH_ONE_BY_ONE,
         swallowTouches: swallowTouches || true
     });
 
+    var nodeEvents = ['onTouchBegan', 'onTouchMoved', 'onTouchEnded'];
+    nodeEvents.forEach(function(eventName, index) {
 
-    touchListener.onTouchBegan = function() {
-        if (!node.onTouchBegan) {
-            return false;
-        }
+        touchListener[eventName] = function() {
+            var event = sz.uiloader.getWidgetEventName(node, sz.UILoader.touchEvents[index]);
+            if (!target[event]) {
+                return false;
+            }
 
-        var ret = node.onTouchBegan.apply(node,arguments);
-        return ret ? true : false;
-    };
-
-    touchListener.onTouchMoved = function() {
-        if (node.onTouchMoved) {
-            node.onTouchMoved.apply(node,arguments);
-        }
-    };
-
-    touchListener.onTouchEnded = function() {
-        if (node.onTouchEnded) {
-            node.onTouchEnded.apply(node,arguments);
-        }
-    };
+            var args = Array.prototype.slice.call(arguments);
+            args.unshift(node);
+            var ret = target[event].apply(target, args);
+            if (index === 0) {
+                return ret ? true : false;
+            }
+        };
+    });
 
     cc.eventManager.addListener(touchListener, node);
     return touchListener;
