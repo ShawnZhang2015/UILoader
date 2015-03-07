@@ -109,6 +109,7 @@ ctor: function () {
 sz.uiloader.registerTouchEvent = function(node, target, touchEvent, swallowTouches) {
 }
 ```
+
 >node为必须参数，默认事件响应对象也为node
 ```javascript
 sz.uiloader.registerTouchEvent(button);
@@ -124,7 +125,6 @@ ctor: function() {
     sz.uiloader.registerTouchEvent(button, this);
     button.setName('_button');
 },
-
 _onButtonTouchBegan = function(sender, touch, event) {
     ...
     return true;
