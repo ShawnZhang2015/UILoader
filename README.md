@@ -130,10 +130,13 @@ _onButtonTouchBegan = function(sender, touch, event) {
     return true;
 }
 ```
+
 >需要注意cc.Node类型的TouchBegan事件返回true时，才能正确响应之后的TouchMoved、TouchEnded事件。
->cc.Node类型的长按键事件暂未实现。
+cc.Node类型的长按键事件暂未实现。
+
 
 ##支持cocostudio2.1
+
 >sz.UILoader可以同时支持cocostudio(1.x/2.1)导出的UI文件, 
 但在加载新版本cocostudio导出的配置文件时你需要保证使用了正确的cocos2d-js引擎版本。
 >支持cocostudio2.1嵌套UI的事件响应。需要注意的是嵌套UI节点为cc.Node类型。
