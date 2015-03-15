@@ -277,7 +277,7 @@ sz.uiloader.registerTouchEvent = function(node, target, touchEvent, swallowTouch
 
     var touchListener = cc.EventListener.create({
         event: touchEvent || cc.EventListener.TOUCH_ONE_BY_ONE,
-        swallowTouches: swallowTouches || true
+        swallowTouches: swallowTouches ? true : false
     });
 
     var nodeEvents = ['onTouchBegan', 'onTouchMoved', 'onTouchEnded'];
