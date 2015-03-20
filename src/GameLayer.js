@@ -33,6 +33,7 @@ GameLayer = cc.LayerColor.extend({
 
     _onSpriteButtonTouchBegan: function() {
         cc.log('_onSpriteButtonTouchBegan');
+        return true;
     },
 
 

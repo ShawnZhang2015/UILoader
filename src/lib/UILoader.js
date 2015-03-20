@@ -275,6 +275,10 @@ sz.uiloader.registerTouchEvent = function(node, target, touchEvent, swallowTouch
         return null;
     }
 
+    if (swallowTouches === undefined) {
+        swallowTouches = true;
+    }
+
     var touchListener = cc.EventListener.create({
         event: touchEvent || cc.EventListener.TOUCH_ONE_BY_ONE,
         swallowTouches: swallowTouches ? true : false
@@ -284,13 +288,23 @@ sz.uiloader.registerTouchEvent = function(node, target, touchEvent, swallowTouch
     nodeEvents.forEach(function(eventName, index) {
 
         touchListener[eventName] = function() {
-            var event = sz.uiloader.getWidgetEventName(node, sz.UILoader.touchEvents[index]);
+            var touchNode = arguments[1].getCurrentTarget();
+            var event = sz.uiloader.getWidgetEventName(touchNode, sz.UILoader.touchEvents[index]);
             if (!target[event]) {
                 return false;
             }
 
+            if (index === 0) {
+                var point = arguments[0].getLocation();
+                point = touchNode.convertToNodeSpace(point);
+                var rect = cc.rect(0,0, touchNode.width, touchNode.height);
+                if (!cc.rectContainsPoint(rect, point)) {
+                    return false;
+                }
+            }
+
             var args = Array.prototype.slice.call(arguments);
-            args.unshift(node);
+            args.unshift(touchNode);
             var ret = target[event].apply(target, args);
             if (index === 0) {
                 return ret ? true : false;
