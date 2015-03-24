@@ -203,6 +203,10 @@ sz.UILoader = cc.Class.extend({
     //
     //}
 
+    //_onNodeEvent: function(sender, touch, event) {
+    //
+    //}
+
     /**
      * @param widget
      * @param event
@@ -275,6 +279,8 @@ sz.uiloader.registerTouchEvent = function(node, target, touchEvent, swallowTouch
         return null;
     }
 
+    target = target || node;
+
     if (swallowTouches === undefined) {
         swallowTouches = true;
     }
@@ -306,6 +312,10 @@ sz.uiloader.registerTouchEvent = function(node, target, touchEvent, swallowTouch
             var args = Array.prototype.slice.call(arguments);
             args.unshift(touchNode);
             var ret = target[event].apply(target, args);
+            if (sz.uiloader._onNodeEvent) {
+                sz.uiloader._onNodeEvent(touchNode, args[1], args[2]);
+            }
+
             if (index === 0) {
                 return ret ? true : false;
             }
